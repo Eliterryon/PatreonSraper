@@ -69,10 +69,8 @@ for el in elements:
     post_title = re.sub(r'[<>:"\\/|?*]', ' ',post_title)    ### remove forbiden character   
     
     post_time_cut = post_time.split()
+    post_time_cut[1] = post_time_cut[1][:-1]
     if int(post_time_cut[1]) < 10:
-        post_time_cut[1] = post_time_cut[1][:-1]
-        post_time_cut[0] = post_time_cut[0][:3]
-        post_time_cut[3] = post_time_cut[0][:4]
         post_time = post_time_cut[0] + " 0" + str(int(post_time_cut[1])) + ", " + post_time_cut[2]   ### make sur to have same lengt time everytime
     
     path = str(Path.home() / "Downloads") + "//apple_nettle//" + "(" + post_time + ")" + post_title  
@@ -116,4 +114,6 @@ for el in elements:
     postes.append({'title': post_title, 'timee': post_time, 'number':nb_image})
     
 print(*postes, sep='\n')
+
+input("press enter to exit")
 

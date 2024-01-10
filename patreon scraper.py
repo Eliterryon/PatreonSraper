@@ -11,9 +11,9 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 
 
 VISUAL = False
-MAIL = "*"
-MDP = "*"
-CREATOR = ["*"]
+MAIL = input("patreon account mail")
+MDP = input("patreon account password")
+CREATOR = input("patreon creator you wanna download (name in url)")
 
 
 def load_more(_driver):         ###try to click the "load more" return true if succesful, fals if no button is find

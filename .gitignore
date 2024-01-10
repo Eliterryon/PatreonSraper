@@ -1,3 +1,4 @@
 /build
-/env
+/Venv
+/.vscode
 patreon scraper.spec

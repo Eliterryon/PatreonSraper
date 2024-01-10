@@ -1,3 +1,5 @@
 /Venv
 /.vscode
+/build
+/dist
 patreon scraper.spec

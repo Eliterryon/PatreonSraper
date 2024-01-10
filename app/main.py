@@ -11,9 +11,9 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 
 
 VISUAL = False
-MAIL = input("patreon account mail")
-MDP = input("patreon account password")
-CREATOR = input("patreon creator you wanna download (name in url)")
+MAIL = input("patreon account mail : ")
+MDP = input("patreon account password : ")
+CREATOR = input("patreon creator you wanna download (name in url) : ")
 
 
 def load_more(_driver):         ###try to click the "load more" return true if succesful, fals if no button is find
@@ -54,7 +54,7 @@ driver.get('https://www.patreon.com/apple_nettle/posts')        ###go to creator
 try:
    os.mkdir(str(Path.home() / "Downloads")+"//apple_nettle")
 except Exception as ex:
-    print("emergency",type(ex), ex.args)
+    pass
 
 while load_more(driver):       ###load all poste
     pass
@@ -80,7 +80,7 @@ for el in elements:
     try:
         os.mkdir(path)          ### creat the creator directory
     except Exception as ex:
-        print("emergency",type(ex), ex.args)    
+        pass    
     
     try:
         nb_image = (int)(el.find_element(By.XPATH, ".//div[@data-tag='chip-container']//span").text)            ###get the numer of image in the slideshow
